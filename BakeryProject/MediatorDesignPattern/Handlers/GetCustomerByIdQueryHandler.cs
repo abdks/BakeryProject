@@ -2,7 +2,7 @@
 using BakeryProject.MediatorDesignPattern.Queries;
 using BakeryProject.MediatorDesignPattern.Results;
 using MediatR;
-
+using NuGet.Protocol.Plugins;
 
 namespace BakeryProject.MediatorDesignPattern.Handlers
 {
@@ -25,8 +25,7 @@ namespace BakeryProject.MediatorDesignPattern.Handlers
                 Name = values.Name,
                 Surname = values.Surname
             };
+
         }
-
-
     }
 }

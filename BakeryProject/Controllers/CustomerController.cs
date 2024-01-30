@@ -1,4 +1,5 @@
-﻿using BakeryProject.MediatorDesignPattern.Commands;
+﻿
+using BakeryProject.MediatorDesignPattern.Commands;
 using BakeryProject.MediatorDesignPattern.Handlers;
 using BakeryProject.MediatorDesignPattern.Queries;
 using MediatR;
@@ -31,15 +32,22 @@ namespace BakeryProject.Controllers
             await _mediator.Send(command);
             return View();
         }
-      public async Task<IActionResult> DeleteCustomer(int id)
+        public async Task<IActionResult> DeleteCustomer(int id)
         {
             await _mediator.Send(new RemoveCustomerCommand(id));
             return RedirectToAction("Index");
         }
-        public async Task<IActionResult> UpdateCustomer(int id) 
-       {
-        var values = await _mediator.Send(new GetCustomerByIdQuery(id)); ;
+        [HttpGet]
+        public async Task<IActionResult> UpdateCustomer(int id)
+        {
+            var values = await _mediator.Send(new GetCustomerByIdQuery(id)); ;
             return View(values);
+        }
+                [HttpPost]
+        public async Task<IActionResult> UpdateCustomer(UpdateCustomerCommand command)
+        {
+            await _mediator.Send(command); ;
+            return RedirectToAction("Index");
         }
     }
 }

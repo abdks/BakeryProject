@@ -63,6 +63,106 @@ namespace BakeryProject.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("BakeryProject.DAL.Entities.FiveProduct", b =>
+                {
+                    b.Property<int>("fiveProductId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("fiveProductId"), 1L, 1);
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("fiveProductId");
+
+                    b.ToTable("FiveProducts");
+                });
+
+            modelBuilder.Entity("BakeryProject.DAL.Entities.Main", b =>
+                {
+                    b.Property<int>("MainID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MainID"), 1L, 1);
+
+                    b.Property<string>("Title1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MainID");
+
+                    b.ToTable("Mains");
+                });
+
+            modelBuilder.Entity("BakeryProject.DAL.Entities.NewProduct", b =>
+                {
+                    b.Property<int>("NewProductID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NewProductID"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescriptionBold")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("NewProductID");
+
+                    b.ToTable("NewProducts");
+                });
+
+            modelBuilder.Entity("BakeryProject.DAL.Entities.OnePage", b =>
+                {
+                    b.Property<int>("OnePageID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OnePageID"), 1L, 1);
+
+                    b.Property<string>("Description1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("OnePageID");
+
+                    b.ToTable("OnePages");
+                });
+
             modelBuilder.Entity("BakeryProject.DAL.Entities.Product", b =>
                 {
                     b.Property<int>("ProductID")
@@ -89,6 +189,81 @@ namespace BakeryProject.Migrations
                     b.HasIndex("CategoryID");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("BakeryProject.DAL.Entities.Services", b =>
+                {
+                    b.Property<int>("ServicesID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ServicesID"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ServicesID");
+
+                    b.ToTable("Services");
+                });
+
+            modelBuilder.Entity("BakeryProject.DAL.Entities.Slider", b =>
+                {
+                    b.Property<int>("SliderID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SliderID"), 1L, 1);
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SliderID");
+
+                    b.ToTable("Sliders");
+                });
+
+            modelBuilder.Entity("BakeryProject.DAL.Entities.TwoPage", b =>
+                {
+                    b.Property<int>("TwoPageID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TwoPageID"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameSurname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Unvan")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TwoPageID");
+
+                    b.ToTable("TwoPages");
                 });
 
             modelBuilder.Entity("BakeryProject.DAL.Entities.Product", b =>

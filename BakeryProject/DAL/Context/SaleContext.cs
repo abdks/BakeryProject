@@ -13,5 +13,13 @@ namespace BakeryProject.DAL.Context
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<FiveProduct> FiveProducts { get; set; }
+        public DbSet<Main> Mains { get; set; }
+        public DbSet<NewProduct> NewProducts { get; set; }
+        public DbSet<OnePage> OnePages { get; set; }
+        public DbSet<Services> Services { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
+        public DbSet<TwoPage> TwoPages { get; set; }
+
     }
 }

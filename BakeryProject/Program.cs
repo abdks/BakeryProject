@@ -1,19 +1,29 @@
 using BakeryProject.CQRSPattern.Commands;
 using BakeryProject.CQRSPattern.Handlers;
+using BakeryProject.CQRSPattern.Handlers.Main;
+using BakeryProject.CQRSPattern.Handlers.slider;
 using BakeryProject.DAL.Context;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<SaleContext>();
-builder.Services.AddScoped<GetProductQueryHandler>();
-builder.Services.AddScoped<GetCategoryQueryHandler>();
-builder.Services.AddScoped<CreateCategoryCommandHandler>();
-builder.Services.AddScoped<CreateProductCommandHandler>();
-builder.Services.AddScoped<GetCategoryByIdQueryHandler>();
-builder.Services.AddScoped<UpdateCategoryCommandHandler>();
-builder.Services.AddScoped<RemoveCategoryCommandHandler>();
 
+
+//Slider
+builder.Services.AddScoped<GetSliderQueryHandler>();
+builder.Services.AddScoped<CreateSliderCommandHandler>();
+builder.Services.AddScoped<GetSliderByIdQueryHandler>();
+builder.Services.AddScoped<UpdateSliderCommandHandler>();
+builder.Services.AddScoped<RemoveSliderCommandHandler>();
+//Slider Bitiþ
+//Main
+builder.Services.AddScoped<GetMainQueryHandler>();
+builder.Services.AddScoped<CreateMainCommandHandler>();
+builder.Services.AddScoped<GetMainByIdQueryHandler>();
+builder.Services.AddScoped<UpdateMainCommandHandler>();
+builder.Services.AddScoped<RemoveMainCommandHandler>();
+//Main Bitiþ
 //medaitr
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 // Add services to the container.

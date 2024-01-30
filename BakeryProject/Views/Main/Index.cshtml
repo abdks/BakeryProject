@@ -1,0 +1,31 @@
+﻿@model List<BakeryProject.CQRSPattern.Results.Main.GetMainQueryResult>
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>1.Başlık</th>
+            <th>2.Başlık</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MainID</td>
+                <td>@item.Title1</td>
+                <td>@item.Title2</td>
+                <td><a href="/Main/DeleteMain/@item.MainID" class="btn btn-danger">Sil</td>
+                <td><a href="/Main/UpdateMain/@item.MainID" class="btn btn-danger">Güncelle</td>
+            </tr>
+        }
+    </table>
+    <a href="/Main/CreateMain/" class="btn btn-success">Yeni Main Girişi</a>
+</div>

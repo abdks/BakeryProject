@@ -3,8 +3,7 @@ using MediatR;
 
 namespace BakeryProject.MediatorDesignPattern.Queries
 {
-    public class GetAllCustomerQuery:IRequest<List<GetAllCustomerQueryResult>>
+    public class GetAllCustomerQuery:IRequest<List<GetAllCustomersQueryResult>>
     {
-        
     }
 }

@@ -3,7 +3,7 @@ using MediatR;
 
 namespace BakeryProject.MediatorDesignPattern.Queries
 {
-    public class GetCustomerByIdQuery:IRequest<GetCustomerByIdQueryResult>
+    public class GetCustomerByIdQuery : IRequest<GetCustomerByIdQueryResult>
     {
         public int Id { get; set; }
 

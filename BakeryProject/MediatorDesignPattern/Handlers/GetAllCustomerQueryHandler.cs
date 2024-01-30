@@ -2,33 +2,30 @@
 using BakeryProject.MediatorDesignPattern.Queries;
 using BakeryProject.MediatorDesignPattern.Results;
 using MediatR;
-using NuGet.Protocol.Plugins;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography.Pkcs;
 
 namespace BakeryProject.MediatorDesignPattern.Handlers
 {
-    public class GetAllCustomerQueryHandler:IRequestHandler<GetCustomerByIdQuery, GetCustomerByIdQueryResult>
+    public class GetAllCustomerQueryHandler : IRequestHandler<GetAllCustomerQuery, List<GetAllCustomersQueryResult>>
     {
-        private readonly SaleContext _saleContext;
+        private SaleContext _saleContext;
 
         public GetAllCustomerQueryHandler(SaleContext saleContext)
         {
             _saleContext = saleContext;
         }
 
-        public async Task<GetCustomerByIdQueryResult> Handle(GetCustomerByIdQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetAllCustomersQueryResult>> Handle(GetAllCustomerQuery request, CancellationToken cancellationToken)
         {
-            var values = await _saleContext.Customers.FindAsync(request.Id);
-            return new GetCustomerByIdQueryResult
+            return await _saleContext.Customers.Select(x => new GetAllCustomersQueryResult
             {
-                CustomerID = values.CustomerID,
-                Department = values.Department,
-                Name = values.Name,
-                Surname = values.Surname
-            };
-
+                CustomerID = x.CustomerID,
+                Department = x.Department,
+                Name = x.Name,
+                Surname = x.Surname
+            }).ToListAsync();
 
         }
-
-        
     }
 }

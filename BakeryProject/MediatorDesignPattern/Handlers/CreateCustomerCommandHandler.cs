@@ -24,5 +24,6 @@ namespace BakeryProject.MediatorDesignPattern.Handlers
             });
             await _saleContext.SaveChangesAsync();
         }
+
     }
 }

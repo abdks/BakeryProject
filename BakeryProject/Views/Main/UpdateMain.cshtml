@@ -1,0 +1,24 @@
+﻿@model BakeryProject.CQRSPattern.Results.Main.GetMainByIdQueryResult
+
+@{
+    ViewData["Title"] = "UpdateMain";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>ID</label>
+        <input type="text" asp-for="MainID" class="form-control" />
+        <br />
+        <label>1.Başlık </label>
+        <input type="text" asp-for="Title1" class="form-control" />
+        <br />
+        <label>2.Başlık </label>
+        <input type="text" asp-for="Title2" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Main Güncelle</button>
+    </form>
+</div>

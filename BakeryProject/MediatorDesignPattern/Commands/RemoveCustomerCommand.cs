@@ -2,7 +2,7 @@
 
 namespace BakeryProject.MediatorDesignPattern.Commands
 {
-    public class RemoveCustomerCommand : IRequest
+    public class RemoveCustomerCommand:IRequest
     {
         public int Id { get; set; }
 
@@ -10,6 +10,5 @@ namespace BakeryProject.MediatorDesignPattern.Commands
         {
             Id = id;
         }
-
     }
 }
