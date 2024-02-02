@@ -4,9 +4,9 @@
     {
         public int Id { get; set; }
 
-        public RemoveMainCommand(int ıd)
+        public RemoveMainCommand(int id)
         {
-            Id = ıd;
+            Id = id;
         }
     }
 }

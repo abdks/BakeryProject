@@ -1,0 +1,32 @@
+﻿@model List<BakeryProject.CQRSPattern.Results.FiveProduct.GetFiveProductQueryResult>
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Ad</th>
+            <th>Resim</th>
+            <th>Resim Linki</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.fiveProductId</td>
+                <td><img src="@item.Image" height="50px" width="50px" /></td>
+                <td>@item.Image</td>
+                <td><a href="/FiveProduct/DeleteFiveProduct/@item.fiveProductId" class="btn btn-danger">Sil</td>
+                <td><a href="/FiveProduct/UpdateFiveProduct/@item.fiveProductId" class="btn btn-danger">Güncelle</td>
+            </tr>
+        }
+    </table>
+    <a href="/FiveProduct/CreateFiveProduct/" class="btn btn-success">Yeni FiveProduct Girişi</a>
+</div>

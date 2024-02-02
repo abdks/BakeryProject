@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BakeryProject.Migrations
 {
     [DbContext(typeof(SaleContext))]
-    [Migration("20240130124709_mig10")]
-    partial class mig10
+    [Migration("20240202090400_mig12444")]
+    partial class mig12444
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

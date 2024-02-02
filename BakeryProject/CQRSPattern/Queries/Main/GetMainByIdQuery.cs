@@ -4,9 +4,9 @@
     {
         public int Id { get; set; }
 
-        public GetMainByIdQuery(int ıd)
+        public GetMainByIdQuery(int id)
         {
-            Id = ıd;
+            Id = id;
         }
     }
 }
