@@ -1,0 +1,39 @@
+﻿@model List<BakeryProject.CQRSPattern.Results.TwoPage.GetTwoPageQueryResult>
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>TwoPage Resim</th>
+            <th>TwoPage Resim Linki</th>
+            <th>TwoPage Başlık</th>
+            <th>TwoPage Açıklama</th>
+            <th>TwoPage Ad Soyad</th>
+            <th>TwoPage Unvan</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TwoPageID</td>
+                <td><img src="@item.Image" height="50px" width="50px" /></td>
+                <td>@item.Image</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.NameSurname</td>
+                <td>@item.Unvan</td>
+                <td><a href="/TwoPage/DeleteTwoPage/@item.TwoPageID" class="btn btn-danger">Sil</td>
+                <td><a href="/TwoPage/UpdateTwoPage/@item.TwoPageID" class="btn btn-danger">Güncelle</td>
+            </tr>
+        }
+    </table>
+    <a href="/TwoPage/CreateTwoPage/" class="btn btn-success">Yeni TwoPage Girişi</a>
+</div>

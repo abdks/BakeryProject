@@ -1,0 +1,37 @@
+﻿@model List<BakeryProject.CQRSPattern.Results.OnePage.GetOnePageQueryResult>
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>OnePage Resim</th>
+            <th>OnePage Resim Linki</th>
+            <th>OnePage Başlık</th>
+            <th>OnePage Açıklama1</th>
+            <th>OnePage Açıklama2</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.OnePageID</td>
+                <td><img src="@item.Image" height="50px" width="50px" /></td>
+                <td>@item.Image</td>
+                <td>@item.Title</td>
+                <td>@item.Description1</td>
+                <td>@item.Description2</td>
+                <td><a href="/OnePage/DeleteOnePage/@item.OnePageID" class="btn btn-danger">Sil</td>
+                <td><a href="/OnePage/UpdateOnePage/@item.OnePageID" class="btn btn-danger">Güncelle</td>
+            </tr>
+        }
+    </table>
+    <a href="/OnePage/CreateOnePage/" class="btn btn-success">Yeni OnePage Girişi</a>
+</div>

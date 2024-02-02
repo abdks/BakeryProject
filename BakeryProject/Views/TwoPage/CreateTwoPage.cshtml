@@ -1,0 +1,29 @@
+﻿@model BakeryProject.CQRSPattern.Commands.TwoPage.CreateTwoPageCommand
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>TwoPage Resimi</label>
+        <input type="text" asp-for="Image" class="form-control" />
+        <br />
+        <label>TwoPage Başlık</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+        <label>TwoPage Ad Soyad</label>
+        <input type="text" asp-for="NameSurname" class="form-control" />
+        <br />
+        <label>TwoPage Açıklama</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        <label>TwoPage Unvan</label>
+        <input type="text" asp-for="Unvan" class="form-control" />
+        <br />
+       
+
+        <button class="btn btn-primary">TwoPage Ekle</button>
+    </form>
+</div>

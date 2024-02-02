@@ -20,6 +20,13 @@ namespace BakeryProject.DAL.Context
         public DbSet<Services> Services { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<TwoPage> TwoPages { get; set; }
+        public DbSet<Companynews> Companynews { get; set; }
+        public DbSet<Questions> Questions { get; set; }
+        public DbSet<HelpSupport> HelpSupports { get; set; }
+        public DbSet<AboutCard> AboutCards { get; set; }
+        public DbSet<Teams> Teams { get; set; }
+        public DbSet<Gallery> Galleries { get; set; }
+        public DbSet<Contact> contacts { get; set; }
 
     }
 }
