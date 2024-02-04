@@ -1,0 +1,26 @@
+﻿@model BakeryProject.MediatorDesignPattern.Results.Questions.GetQuestionsByIdQueryResult
+
+@{
+    ViewData["Title"] = "CreateQuestions";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>ID</label>
+        <input type="text" asp-for="QuestionsID" class="form-control" />
+        <br />
+        <label>Soru</label>
+        <input type="text" asp-for="Question" class="form-control" />
+        <br />
+        <label>Cevap</label>
+        <input type="text" asp-for="Answer" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Güncelle</button>
+    </form>
+</div>

@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="MediatorDesignPattern\Queries\Questions\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 
