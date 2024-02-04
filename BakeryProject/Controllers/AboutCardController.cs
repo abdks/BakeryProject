@@ -1,50 +1,52 @@
 ﻿
 using BakeryProject.MediatorDesignPattern.Commands;
+using BakeryProject.MediatorDesignPattern.Commands.AboutCard;
 using BakeryProject.MediatorDesignPattern.Handlers;
 using BakeryProject.MediatorDesignPattern.Queries;
+using BakeryProject.MediatorDesignPattern.Queries.AboutCard;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
 
 namespace BakeryProject.Controllers
 {
-    public class CustomerController : Controller
+    public class AboutCardController : Controller
     {
         private readonly IMediator _mediator;
-        public CustomerController(IMediator mediator)
+        public AboutCardController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
         public async Task<IActionResult> Index()
         {
-            var values = await _mediator.Send(new GetAllCustomerQuery());
+            var values = await _mediator.Send(new GetAllAboutCardQuery());
             return View(values);
         }
         [HttpGet]
-        public IActionResult CreateCustomer()
+        public IActionResult CreateAboutCard()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> CreateCustomer(CreateCustomerCommand command)
+        public async Task<IActionResult> CreateAboutCard(CreateAboutCardCommand command)
         {
             await _mediator.Send(command);
-            return View();
+            return RedirectToAction("Index");
         }
-        public async Task<IActionResult> DeleteCustomer(int id)
+        public async Task<IActionResult> DeleteAboutCard(int id)
         {
-            await _mediator.Send(new RemoveCustomerCommand(id));
+            await _mediator.Send(new RemoveAboutCardCommand(id));
             return RedirectToAction("Index");
         }
         [HttpGet]
-        public async Task<IActionResult> UpdateCustomer(int id)
+        public async Task<IActionResult> UpdateAboutCard(int id)
         {
-            var values = await _mediator.Send(new GetCustomerByIdQuery(id)); ;
+            var values = await _mediator.Send(new GetAboutCardByIdQuery(id)); ;
             return View(values);
         }
-                [HttpPost]
-        public async Task<IActionResult> UpdateCustomer(UpdateCustomerCommand command)
+        [HttpPost]
+        public async Task<IActionResult> UpdateAboutCard(UpdateAboutCardCommand command)
         {
             await _mediator.Send(command); ;
             return RedirectToAction("Index");

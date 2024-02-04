@@ -1,0 +1,29 @@
+﻿@model BakeryProject.MediatorDesignPattern.Results.AboutCard.GetAboutCardByIdQueryResult
+
+@{
+    ViewData["Title"] = "CreateAboutCard";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>ID</label>
+        <input type="text" asp-for="AboutCardID" class="form-control" />
+        <br />
+        <label>İsim</label>
+        <input type="text" asp-for="AboutCardName" class="form-control" />
+        <br />
+        <label>Açıklama</label>
+        <input type="text" asp-for="AboutCardDescription" class="form-control" />
+        <br />
+        <label>Resim</label>
+        <input type="text" asp-for="Image" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Güncelle</button>
+    </form>
+</div>

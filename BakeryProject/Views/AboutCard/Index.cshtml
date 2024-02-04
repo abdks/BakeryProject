@@ -1,0 +1,38 @@
+﻿@model List<BakeryProject.MediatorDesignPattern.Results.AboutCard.GetAllAboutCardQueryResult>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+
+            <th>Resim</th>
+            <th>Resim Linki</th>
+            <th>İsim</th>
+            <th>Açıklama</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AboutCardID</td>
+                <td><img src="@item.Image" height="50px" width="50px" /></td>
+                <td>@item.Image</td>
+                <td>@item.AboutCardName</td>
+                <td>@item.AboutCardDescription</td>
+                <td><a href="/AboutCard/DeleteAboutCard/@item.AboutCardID" class="btn btn-danger">Sil</td>
+                <td><a href="/AboutCard/UpdateAboutCard/@item.AboutCardID" class="btn btn-danger">Güncelle</td>
+            </tr>
+        }
+    </table>
+    <a href="/AboutCard/CreateAboutCard/" class="btn btn-success">Yeni Hakkında Kart Girişi</a>
+</div>
