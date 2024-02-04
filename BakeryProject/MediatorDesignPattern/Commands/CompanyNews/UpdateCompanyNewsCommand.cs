@@ -1,6 +1,8 @@
-﻿namespace BakeryProject.MediatorDesignPattern.Commands.CompanyNews
+﻿using MediatR;
+
+namespace BakeryProject.MediatorDesignPattern.Commands.CompanyNews
 {
-    public class UpdateCompanyNewsCommand
+    public class UpdateCompanyNewsCommand : IRequest
     {
         public int CompanynewsID { get; set; }
         public string Date { get; set; }

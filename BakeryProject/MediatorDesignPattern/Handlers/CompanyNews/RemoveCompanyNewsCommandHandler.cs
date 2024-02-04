@@ -16,8 +16,8 @@ namespace BakeryProject.MediatorDesignPattern.Handlers.CompanyNews
 
         public async Task Handle(RemoveCompanyNewsCommand request, CancellationToken cancellationToken)
         {
-            var values = _saleContext.Customers.Find(request.Id);
-            _saleContext.Customers.Remove(values);
+            var values = _saleContext.Companynews.Find(request.Id);
+            _saleContext.Companynews.Remove(values);
             await _saleContext.SaveChangesAsync();
         }
     }

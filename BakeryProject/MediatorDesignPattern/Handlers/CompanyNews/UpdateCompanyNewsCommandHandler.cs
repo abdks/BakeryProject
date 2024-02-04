@@ -1,8 +1,7 @@
 ﻿using BakeryProject.DAL.Context;
-using BakeryProject.MediatorDesignPattern.Commands;
 using BakeryProject.MediatorDesignPattern.Commands.CompanyNews;
 using MediatR;
-
+using System.Threading.Tasks;
 
 namespace BakeryProject.MediatorDesignPattern.Handlers.CompanyNews
 {
@@ -10,7 +9,6 @@ namespace BakeryProject.MediatorDesignPattern.Handlers.CompanyNews
     {
         private readonly SaleContext _saleContext;
 
- 
         public UpdateCompanyNewsCommandHandler(SaleContext saleContext)
         {
             _saleContext = saleContext;
@@ -24,5 +22,6 @@ namespace BakeryProject.MediatorDesignPattern.Handlers.CompanyNews
             values.Date = request.Date;
             await _saleContext.SaveChangesAsync();
         }
+
     }
 }

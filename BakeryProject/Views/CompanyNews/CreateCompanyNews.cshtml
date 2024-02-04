@@ -1,0 +1,26 @@
+﻿@model BakeryProject.MediatorDesignPattern.Commands.CompanyNews.CreateCompanyNewsCommand
+
+@{
+    ViewData["Title"] = "CreateCompanyNews";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>Başlık</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+        <label>Tarih</label>
+        <input type="text" asp-for="Date" class="form-control" />
+        <br />
+        <label>Resim</label>
+        <input type="text" asp-for="Image" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Ekle</button>
+    </form>
+</div>

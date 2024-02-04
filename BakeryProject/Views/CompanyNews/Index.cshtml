@@ -1,0 +1,38 @@
+﻿@model List<BakeryProject.MediatorDesignPattern.Results.CompanyNews.GetAllCompanyNewsQueryResult>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            
+            <th>Resim</th>
+            <th>Resim Linki</th>
+            <th>Başlık</th>
+            <th>Tarih</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CompanynewsID</td>
+                <td><img src="@item.Image" height="50px" width="50px" /></td>
+                <td>@item.Image</td>
+                <td>@item.Title</td>
+                <td>@item.Date</td>
+                <td><a href="/CompanyNews/DeleteCompanyNews/@item.CompanynewsID" class="btn btn-danger">Sil</td>
+                <td><a href="/CompanyNews/UpdateCompanyNews/@item.CompanynewsID" class="btn btn-danger">Güncelle</td>
+            </tr>
+        }
+    </table>
+    <a href="/CompanyNews/CreateCompanyNews/" class="btn btn-success">Yeni Haber Girişi</a>
+</div>
