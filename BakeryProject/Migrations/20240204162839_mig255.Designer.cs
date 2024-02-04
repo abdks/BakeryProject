@@ -3,6 +3,7 @@ using BakeryProject.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BakeryProject.Migrations
 {
     [DbContext(typeof(SaleContext))]
-    partial class SaleContextModelSnapshot : ModelSnapshot
+    [Migration("20240204162839_mig255")]
+    partial class mig255
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -248,7 +250,7 @@ namespace BakeryProject.Migrations
 
                     b.HasKey("MessagesID");
 
-                    b.ToTable("Messages");
+                    b.ToTable("messages");
                 });
 
             modelBuilder.Entity("BakeryProject.DAL.Entities.NewProduct", b =>

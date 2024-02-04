@@ -1,0 +1,37 @@
+﻿@model List<BakeryProject.MediatorDesignPattern.Results.Messages.GetAllMessagesQueryResult>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>İsim</th>
+            <th>Mail</th>
+            <th>Başlık</th>
+            <th>Mesaj</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MessagesID</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Subject</td>
+                <td>@item.Message</td>
+                <td><a href="/Messages/DeleteMessages/@item.MessagesID" class="btn btn-danger">Sil</td>
+                <td><a href="/Messages/UpdateMessages/@item.MessagesID" class="btn btn-danger">Güncelle</td>
+            </tr>
+        }
+    </table>
+    <a href="/Messages/CreateMessages/" class="btn btn-success">Yeni Mesaj Girişi</a>
+</div>

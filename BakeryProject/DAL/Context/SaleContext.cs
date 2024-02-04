@@ -27,6 +27,7 @@ namespace BakeryProject.DAL.Context
         public DbSet<Teams> Teams { get; set; }
         public DbSet<Gallery> Galleries { get; set; }
         public DbSet<Contact> contacts { get; set; }
+        public DbSet<Messages> Messages { get; set; }
 
     }
 }

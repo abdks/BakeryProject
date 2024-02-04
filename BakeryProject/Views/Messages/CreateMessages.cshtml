@@ -1,0 +1,29 @@
+﻿@model BakeryProject.MediatorDesignPattern.Commands.Messages.CreateMessagesCommand
+
+@{
+    ViewData["Title"] = "CreateMessages";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>İsim</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <br />
+        <label>Mail</label>
+        <input type="text" asp-for="Email" class="form-control" />
+        <br />
+        <label>Başlık</label>
+        <input type="text" asp-for="Subject" class="form-control" />
+        <br />
+        <label>Başlık</label>
+        <input type="text" asp-for="Message" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Ekle</button>
+    </form>
+</div>
