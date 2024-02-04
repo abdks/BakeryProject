@@ -1,0 +1,37 @@
+﻿@model List<BakeryProject.MediatorDesignPattern.Results.Teams.GetAllTeamsQueryResult>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+
+            <th>Resim</th>
+            <th>Resim Linki</th>
+            <th>İsim</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TeamsID</td>
+                <td><img src="@item.Image" height="50px" width="50px" /></td>
+                <td>@item.Image</td>
+                <td>@item.TeamsName</td>
+            
+                <td><a href="/Teams/DeleteTeams/@item.TeamsID" class="btn btn-danger">Sil</td>
+                <td><a href="/Teams/UpdateTeams/@item.TeamsID" class="btn btn-danger">Güncelle</td>
+            </tr>
+        }
+    </table>
+    <a href="/Teams/CreateTeams/" class="btn btn-success">Yeni Takım Arkadaşı Girişi</a>
+</div>

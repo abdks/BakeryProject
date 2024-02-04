@@ -1,0 +1,28 @@
+﻿@model BakeryProject.MediatorDesignPattern.Results.Teams.GetTeamsByIdQueryResult
+
+@{
+    ViewData["Title"] = "CreateTeams";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>ID</label>
+        <input type="text" asp-for="TeamsID" class="form-control" />
+        <br />
+        <label>İsim</label>
+        <input type="text" asp-for="TeamsName" class="form-control" />
+        <br />
+
+
+        <label>Resim</label>
+        <input type="text" asp-for="Image" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Güncelle</button>
+    </form>
+</div>
