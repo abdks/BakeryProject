@@ -1,0 +1,27 @@
+﻿@model BakeryProject.MediatorDesignPattern.Commands.Contact.CreateContactCommand
+
+@{
+    ViewData["Title"] = "CreateContact";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+     
+        <label>Adres</label>
+        <input type="text" asp-for="Adress" class="form-control" />
+        <br />    
+        <label>No</label>
+        <input type="text" asp-for="No" class="form-control" />
+        <br />   
+        <label>Mail</label>
+        <input type="text" asp-for="Mail" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Ekle</button>
+    </form>
+</div>
