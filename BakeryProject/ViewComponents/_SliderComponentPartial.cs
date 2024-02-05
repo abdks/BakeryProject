@@ -2,9 +2,9 @@
 
 namespace BakeryProject.ViewComponents
 {
-	public class SliderPartial : ViewComponent
+	public class _SliderComponentPartial : ViewComponent
 	{
-		public async Task<IViewComponentResult> InvokeAsync()
+		public IViewComponentResult Invoke()
 		{
 			return View();
 		}

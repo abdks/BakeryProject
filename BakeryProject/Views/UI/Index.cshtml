@@ -11,20 +11,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <!DOCTYPE html>
 <html lang="zxx">
-@await Component.InvokeAsync("HeadPartial")
+@await Component.InvokeAsync("_HeadComponentPartial")
 
 
 
 <body>
 	<div class="mian-content">
 		<!-- header -->
-		@await Component.InvokeAsync("HeaderPartial")
+		@await Component.InvokeAsync("_HeaderComponentPartial")
 
 		
 		<!-- //header -->
 		<!-- banner -->
 		<!-- main image slider container -->
-		@await Component.InvokeAsync("SliderPartial")
+		@await Component.InvokeAsync("_SliderComponentPartial")
 
 		
 		<!-- end of main image slider container -->
@@ -33,38 +33,38 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- //Model -->
 		<!-- //banner -->
 		<!-- banner bottom icons -->
-		@await Component.InvokeAsync("FivePartial")
+		@await Component.InvokeAsync("_FiveComponentPartial")
 
 		
 		<!-- //banner bottom icons -->
 	</div>
 	<!-- //main -->
 	<!-- banner-bottom -->
-	@await Component.InvokeAsync("OnePagePartial")
+	@await Component.InvokeAsync("_OneComponentPagePartial")
 	@RenderBody()
 	
 
 	<!-- services -->
-	@await Component.InvokeAsync("ServicesPartial")
+	@await Component.InvokeAsync("_ServicesComponentPartial")
 
 	
 	<!-- //services -->
 	<!-- stats section -->
-	@await Component.InvokeAsync("StatsPartial")
+	@await Component.InvokeAsync("_StatsComponentPartial")
 
 	
 	<!-- //stats section -->
 	<!-- new products -->
-	@await Component.InvokeAsync("NewProductPartial")
+	@await Component.InvokeAsync("_NewComponentProductPartial")
 
 	
 	<!-- //new products	-->
 	<!-- news -->
-	@await Component.InvokeAsync("NewsPartial")
+	@await Component.InvokeAsync("_NewsComponentPartial")
 	
 	<!-- //news -->
 	<!-- support -->
-	@await Component.InvokeAsync("SupportPartial")
+	@await Component.InvokeAsync("_SupportComponentPartial")
 
 	
 	<!-- support -->

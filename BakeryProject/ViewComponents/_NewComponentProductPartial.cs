@@ -2,7 +2,7 @@
 
 namespace BakeryProject.ViewComponents
 {
-	public class FivePartial : ViewComponent
+	public class _NewComponentProductPartial : ViewComponent
 	{
 		public IViewComponentResult Invoke()
 		{

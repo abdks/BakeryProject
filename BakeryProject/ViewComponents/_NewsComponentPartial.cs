@@ -3,9 +3,9 @@ using NuGet.Protocol.Core.Types;
 
 namespace BakeryProject.ViewComponents
 {
-	public class StatsPartial : ViewComponent
+	public class _NewsComponentPartial: ViewComponent 
 	{
-		public async Task<IViewComponentResult> InvokeAsync()
+		public IViewComponentResult Invoke()
 		{
 			return View();
 		}

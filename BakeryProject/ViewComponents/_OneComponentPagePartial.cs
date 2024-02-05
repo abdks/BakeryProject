@@ -2,9 +2,9 @@
 
 namespace BakeryProject.ViewComponents
 {
-	public class ServicesPartial : ViewComponent
+	public class _OneComponentPagePartial : ViewComponent
 	{
-		public async Task<IViewComponentResult> InvokeAsync()
+		public IViewComponentResult Invoke()
 		{
 			return View();
 		}

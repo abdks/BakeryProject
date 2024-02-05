@@ -2,12 +2,11 @@
 
 namespace BakeryProject.ViewComponents
 {
-	public class SupportPartial : ViewComponent
+	public class _FiveComponentPartial : ViewComponent
 	{
-		public async Task<IViewComponentResult> InvokeAsync()
+		public IViewComponentResult Invoke()
 		{
 			return View();
 		}
-
 	}
 }
