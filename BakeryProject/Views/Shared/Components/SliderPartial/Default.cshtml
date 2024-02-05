@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div id="slider-main">
+	<div class="banner-text-agile text-center">
+		<div class="container">
+			<h3 class="text-white font-weight-bold mb-3">The Taste Of Our Amazing Cakes</h3>
+			<p class="text-light">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<button type="button" class="btn btn-primary button mt-md-5 mt-4" data-toggle="modal" data-target=".bd-example-modal-lg">
+				<span>Watch Our Video</span>
+			</button>
+		</div>
+	</div>
+	<!-- previous button -->
+	<button id="prev">
+		<i class="fas fa-chevron-left"></i>
+	</button>
+
+	<!-- image container -->
+	<div id="slider"></div>
+
+	<!-- next button -->
+	<button id="next">
+		<i class="fas fa-chevron-right"></i>
+	</button>
+
+	<!-- small circles container -->
+	<div id="circles"></div>
+
+</div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title text-center" id="exampleModalCenterTitle">Cake Bakery</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body p-0">
+				<iframe src="https://player.vimeo.com/video/58582025" style="border:none"></iframe>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,203 @@
+﻿
+@{
+    Layout = null;
+}
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html lang="zxx">
+@await Component.InvokeAsync("HeadPartial")
+
+
+
+<body>
+	<div class="mian-content">
+		<!-- header -->
+		@await Component.InvokeAsync("HeaderPartial")
+
+		
+		<!-- //header -->
+		<!-- banner -->
+		<!-- main image slider container -->
+		@await Component.InvokeAsync("SliderPartial")
+
+		
+		<!-- end of main image slider container -->
+		<!-- Modal -->
+		
+		<!-- //Model -->
+		<!-- //banner -->
+		<!-- banner bottom icons -->
+		@await Component.InvokeAsync("FivePartial")
+
+		
+		<!-- //banner bottom icons -->
+	</div>
+	<!-- //main -->
+	<!-- banner-bottom -->
+	@await Component.InvokeAsync("OnePagePartial")
+	@RenderBody()
+	
+
+	<!-- services -->
+	@await Component.InvokeAsync("ServicesPartial")
+
+	
+	<!-- //services -->
+	<!-- stats section -->
+	@await Component.InvokeAsync("StatsPartial")
+
+	
+	<!-- //stats section -->
+	<!-- new products -->
+	@await Component.InvokeAsync("NewProductPartial")
+
+	
+	<!-- //new products	-->
+	<!-- news -->
+	@await Component.InvokeAsync("NewsPartial")
+	
+	<!-- //news -->
+	<!-- support -->
+	@await Component.InvokeAsync("SupportPartial")
+
+	
+	<!-- support -->
+	<!-- footer -->
+	<footer class="text-center py-sm-4 py-3">
+		<div class="container py-xl-5 py-3">
+			<div class="w3l-footer footer-social-agile mb-4">
+				<ul class="list-unstyled">
+					<li>
+						<a href="#">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+					</li>
+					<li class="mx-1">
+						<a href="#">
+							<i class="fab fa-twitter"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fab fa-dribbble"></i>
+						</a>
+					</li>
+					<li class="ml-1">
+						<a href="#">
+							<i class="fab fa-vk"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- copyright -->
+			<p class="copy-right-grids text-light my-lg-5 my-4 pb-4">
+				© 2018 Cake Bakery. All Rights Reserved | Design by
+				<a href="https://w3layouts.com/" target="_blank">W3layouts</a>
+			</p>
+			<!-- //copyright -->
+		</div>
+		<!-- chef -->
+		<img src="~/Site/images/chef.png" alt="" class="img-fluid chef-style" />
+		<!-- //chef -->
+	</footer>
+	<!-- //footer -->
+	<!-- Js files -->
+	<!-- JavaScript -->
+	<script src="~/Site/js/jquery-2.2.3.min.js"></script>
+	<!-- Default-JavaScript-File -->
+	<!-- flexisel (for special offers) -->
+	<script src="~/Site/js/jquery.flexisel.js"></script>
+	<script>
+		$(window).load(function () {
+			$("#flexiselDemo1").flexisel({
+				visibleItems: 1,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				// responsiveBreakpoints: {
+				// 	portrait: {
+				// 		changePoint: 480,
+				// 		visibleItems: 1
+				// 	},
+				// 	landscape: {
+				// 		changePoint: 640,
+				// 		visibleItems: 2
+				// 	},
+				// 	tablet: {
+				// 		changePoint: 768,
+				// 		visibleItems: 2
+				// 	}
+				// }
+			});
+
+		});
+	</script>
+	<!-- //flexisel (for special offers) -->
+	<!-- script for tabs -->
+	<script>
+		$(function () {
+
+			var menu_ul = $('.faq > li > ul'),
+				menu_a = $('.faq > li > a');
+
+			menu_ul.hide();
+
+			menu_a.click(function (e) {
+				e.preventDefault();
+				if (!$(this).hasClass('active')) {
+					menu_a.removeClass('active');
+					menu_ul.filter(':visible').slideUp('normal');
+					$(this).addClass('active').next().stop(true, true).slideDown('normal');
+				} else {
+					$(this).removeClass('active');
+					$(this).next().stop(true, true).slideUp('normal');
+				}
+			});
+
+		});
+	</script>
+	<!-- script for tabs -->
+	<!-- stats -->
+	<script src="~/Site/js/jquery.waypoints.min.js"></script>
+	<script src="~/Site/js/jquery.countup.js"></script>
+	<script>
+		$('.counter').countUp();
+	</script>
+	<!-- //stats -->
+	<!-- menu-js -->
+	<script>
+		$('.navicon').on('click', function (e) {
+			e.preventDefault();
+			$(this).toggleClass('navicon--active');
+			$('.toggle').toggleClass('toggle--active');
+		});
+	</script>
+	<!-- //menu-js -->
+	<!-- banner slider -->
+	<script src="~/Site/js/image-slider.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/image-slider.css">
+	<!-- //banner slider -->
+	<!-- smooth scrolling -->
+	<script src="~/Site/js/SmoothScroll.min.js"></script>
+	<!-- move-top -->
+	<script src="~/Site/js/move-top.js"></script>
+	<!-- easing -->
+	<script src="~/Site/js/easing.js"></script>
+	<!--  necessary snippets for few javascript files -->
+	<script src="~/Site/js/cakes-bakery.js"></script>
+
+	<script src="~/Site/js/bootstrap.js"></script>
+	<!-- Necessary-JavaScript-File-For-Bootstrap -->
+	<!-- //Js files -->
+
+</body>
+
+</html>
